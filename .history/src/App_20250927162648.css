@@ -138,23 +138,25 @@ body {
   text-align: center;
   padding: 1rem;
 }
-.grid-wrapper {
+/* Parent layout: fixed left column for Add, flexible right area for books */
+.grid.two-cols {
   display: grid;
-  grid-template-columns: var(--card-w) 1fr; /* left = add column, right = all books */
+  grid-template-columns: var(--card-w) 1fr; /* left column = card width */
   gap: var(--gap);
   align-items: start;
 }
 
-/* column that holds only the AddCard */
-.add-col {
+/* Center the Add card inside its left column */
+.add-column {
   display: flex;
   justify-content: center;
+  align-items: flex-start; /* aligns with top row of books */
 }
 
-/* inner grid for the books, same style as old .grid */
-.grid-books {
+.books-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(var(--card-w), 1fr));
   gap: var(--gap);
+  align-items: start;
   justify-items: center;
 }

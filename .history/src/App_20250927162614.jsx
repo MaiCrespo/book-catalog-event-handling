@@ -13,17 +13,17 @@ export default function App() {
       </header>
 
       <main className="content">
-        <div className="grid-wrapper">
-          <aside className="add-col">
+        <section className="grid two-cols">
+          <div className="add-column">
             <AddCard onClick={() => alert("Add new book")} />
-          </aside>
+          </div>
 
-          <section className="grid-books">
+          <div className="books-grid">
             {books.map((b) => (
               <Book key={b.isbn13 ?? b.title} book={b} />
             ))}
-          </section>
-        </div>
+          </div>
+        </section>
       </main>
 
       <footer className="footer">
